@@ -81,7 +81,7 @@ p{
 	padding: 0;
 	list-style-type: none;
 	overflow: hidden;
-	background-color: #aaaaaa;
+	background-color: tomato;
 }
 
 a {
@@ -100,7 +100,7 @@ a:hover {
 li {
 	float: left;
 	padding: 7px 8px;
-	background-color: #aaaaaa;
+	background-color: tomato;
 	display: block;
 	text-align: center;
 	text-decoration: none;
