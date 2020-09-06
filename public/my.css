@@ -1,6 +1,6 @@
 .inactive {
 	padding: 14px 16px;
-	background-color: #aaaaaa;
+	background-color: tomato;
 	display: block;
 	text-align: center;
 	text-decoration: none;
@@ -9,7 +9,7 @@
 
 .active {
 	padding: 14px 16px;
-	background-color: #222222;
+	background-color: #c54343;
 	display: block;
 	text-align: center;
 	text-decoration: none;
