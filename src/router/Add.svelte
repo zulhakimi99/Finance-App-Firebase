@@ -187,5 +187,10 @@ label {
   clear: both;
 }
 
-
+@media screen and (max-width: 600px) {
+  .col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 </style>
