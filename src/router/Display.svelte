@@ -104,7 +104,7 @@ const onSubmitHandler = () => {
                 <span>Amount :  {expenses.amount} </span><br>
                 <span>Label :  {expenses.label} </span><br><br>
                 <button class="btn update" on:click={() => updatecomplate(i)}> Update </button>
-                <button class="btn danger" on:click={() => deleteexpens(i)}> Delete </button>
+                <button class="btn delete-expen" on:click={() => deleteexpens(i)}> Delete </button>
             </div>
             {:else}
             No Expenses...
@@ -112,10 +112,11 @@ const onSubmitHandler = () => {
             {/if}
         </div>
         
-        <button class="btn danger" on:click={clearCompleted}> Clear Selected </button>
+        <button class="btn delete-expen" on:click={clearCompleted}> Clear Selected </button>
       
 
-        <Modal bind:this={update}>      
+        <Modal bind:this={update}> 
+            <div class="container-form">   
 <form on:submit|preventDefault={onSubmitHandler}>
     <div class="form-group">
         <div class="row">
@@ -189,14 +190,22 @@ const onSubmitHandler = () => {
 </center>
     </div>
 </form>
+</div>
         </Modal> 
 
 <style>
+
+    .container-form{
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 35px;
+    }
+
     .display{
         display: grid;
         padding: 20px;
         margin: 0px;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns:repeat(1, 1fr);
         grid-gap: 20px;
         background: #fff;
         border-radius: 6px;
@@ -244,7 +253,11 @@ const onSubmitHandler = () => {
         } /* Red */ 
     .danger:hover {background: #da190b;}
     
-   
+   .delete-expen{
+        background-color: #f44336;
+        float: right;
+        border-radius: 6px;
+   }
 
     .update {
         background-color: #2196F3;
@@ -387,7 +400,17 @@ label {
   clear: both;
 }
 
+@media screen and (min-width: 650px) {
+    .display {
+      grid-template-columns: repeat(2, 1fr);
+    }}
 
 
+    @media screen and (max-width: 600px) {
+  .col-25, .col-75 {
+    width: 100%;
+    margin-top: 0;
+  }
+}
 </style>
 
